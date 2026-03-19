@@ -18,16 +18,19 @@ When assigned a ticket:
 
 1. Read the full comment history to understand the review issues
 2. Get the PR info from the issue document
-3. Check out the branch and fix ALL remaining review issues
+3. USE the `coding-workflow` skillregarding coding, commits and testing and fix ALL remaining review issues
 4. Run the full test suite — ensure everything passes
-5. Run coverage — ensure no regressions\n6. Push fixes and merge the PR directly: `gh pr merge <number> --squash --delete-branch`
-6. Create a QA ticket as subtask assigned to @qa-engineer with the same branch/PR context
-7. Mark your ticket as done with a summary of what you fixed
+5. Run coverage — ensure no regressions.
+6. Push fixes and merge the PR directly: `gh pr merge <number> --squash --delete-branch`
+7. Create a new QA ticket as a subtask: POST /api/companies/{companyId}/issues with parentId, assign to @qa-engineer
+8. In the qa ticket description include: PR URL, branch name, what was changed, what to test. Assign the ticket to @qa
+9. Mark your ticket as done with a summary of what you fixed
 
 You do NOT request further reviews. You fix and merge.
 
+If you have been tagged in a blocked ticket, set the ticket as in progress and repeat your steps to unblock the ticket.
+
 ### Never Do These
 
-- Never mark your own ticket as `done`
-- Never create a new branch when addressing review feedback
+- Never create a new branch when addressing the code changes.
 - Never skip the coding-workflow skill
