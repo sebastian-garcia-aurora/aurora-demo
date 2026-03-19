@@ -19,6 +19,10 @@ app.use(
 
 app.on(["POST", "GET"], "/api/auth/*", (c) => auth.handler(c.req.raw));
 
+app.get("/healthz", (c) => {
+  return c.json({ status: "ok" });
+});
+
 app.get("/", (c) => {
   return c.text("OK");
 });
