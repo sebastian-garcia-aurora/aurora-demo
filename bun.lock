@@ -12,7 +12,6 @@
       "devDependencies": {
         "@aurora-demo/config": "workspace:*",
         "@biomejs/biome": "^2.2.0",
-        "@playwright/test": "^1.58.2",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^16.3.2",
         "@testing-library/user-event": "^14.6.1",
@@ -22,7 +21,14 @@
         "turbo": "^2.8.12",
         "typescript": "^5",
         "vitest": "^4.1.0",
-        "web": "workspace:*",
+      },
+    },
+    "apps/e2e": {
+      "name": "@aurora-demo/e2e",
+      "version": "0.0.0",
+      "devDependencies": {
+        "@playwright/test": "^1.58.2",
+        "typescript": "^5",
       },
     },
     "apps/server": {
@@ -180,6 +186,8 @@
     "@aurora-demo/config": ["@aurora-demo/config@workspace:packages/config"],
 
     "@aurora-demo/db": ["@aurora-demo/db@workspace:packages/db"],
+
+    "@aurora-demo/e2e": ["@aurora-demo/e2e@workspace:apps/e2e"],
 
     "@aurora-demo/env": ["@aurora-demo/env@workspace:packages/env"],
 
