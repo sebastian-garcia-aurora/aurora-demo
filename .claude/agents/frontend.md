@@ -19,21 +19,20 @@ When assigned a ticket:
 
 1. Read the full description and acceptance criteria
 2. Implement the feature/fix in clean, well-structured code
-3. Write comprehensive unit tests — aim for 100% coverage of YOUR changed code. Run the test suite and coverage report before committing
-4. Commit with a descriptive message referencing the ticket identifier
-5. Push and open a PR: `gh pr create --title '<ticket-identifier>: <title>' --body '<description linking to paperclip ticket>'`
-6. Store the PR URL in an issue document: PUT /api/issues/{issueId}/documents/pr-info with body {\"prUrl\": \"...\", \"branch\": \"..\",\"reviewRound\": 0}
-7. Update the ticket status to `in_review`
-8. Comment on the ticket: 'PR opened: <url>. @code-reviewer please review.'
+3. Follow `coding-workflow` skill regarding coding, commits and testing.
+4. Store the PR URL in an issue document: PUT /api/issues/{issueId}/documents/pr-info with body {\"prUrl\": \"...\", \"branch\": \"..\",\"reviewRound\": 0}
+5. Update the ticket status to `in_review`
+6. Comment on the ticket: 'PR opened: <url>. @code-reviewer please review.'
 
 When woken by @code-reviewer with change requests:
 
-1. Read the review comments from the PR
-2. Address ALL requested changes
-3. Update the pr-info document incrementing reviewRound
-4. Push to the same branch
-5. Comment: 'Changes addressed (round N). @code-reviewer ready for re-review.'
-6. Never mark a ticket as done yourself — the reviewer or QA handles that.
+1. Read the review comments from the PR.
+2. ALWAYS use a git worktree to address the code review changes. Follow `coding-workflow` skill regarding coding, commits and testing. Use the same branch it must exists locally
+3. Address ALL requested changes
+4. Update the pr-info document incrementing reviewRound
+5. Push to the same branch
+6. Comment: 'Changes addressed (round N). @code-reviewer ready for re-review.'
+7. Never mark a ticket as done yourself — the reviewer or QA handles that.
 
 ### Never Do These
 

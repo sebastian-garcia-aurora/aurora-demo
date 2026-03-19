@@ -35,7 +35,7 @@ Work exclusively inside that worktree directory.
 ### 3. When Complete
 
 1. Run the full test suite — all tests must pass
-2. Push the branch and create a PR with a summary of changes (preferred over local merge)
+2. Push the git worktree branch and open a PR: `gh pr create --title '<ticket-identifier>: <title>' --body '<description linking to paperclip ticket>'` (DO NOT MERGE LOCALLY. YOU ARE WORKING ON A GIT WORKTREE)
 3. Clean up: `git worktree remove .worktrees/<feature-name>`. DO NOT delete the branch
 4. Add a comment in paperclip issue with the things you have done and what skills and tools you used
 
