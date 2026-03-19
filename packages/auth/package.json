@@ -1,0 +1,24 @@
+{
+  "name": "@aurora-demo/auth",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {},
+  "dependencies": {
+    "@aurora-demo/db": "workspace:*",
+    "@aurora-demo/env": "workspace:*",
+    "better-auth": "catalog:",
+    "dotenv": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@aurora-demo/config": "workspace:*",
+    "typescript": "^5"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "base-lyra",
+  "rsc": false,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "src/styles/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "iconLibrary": "lucide",
+  "aliases": {
+    "components": "@aurora-demo/ui/components",
+    "utils": "@aurora-demo/ui/lib/utils",
+    "hooks": "@aurora-demo/ui/hooks",
+    "lib": "@aurora-demo/ui/lib",
+    "ui": "@aurora-demo/ui/components"
+  },
+  "menuColor": "default",
+  "menuAccent": "subtle",
+  "registries": {}
+}
