@@ -44,14 +44,6 @@
     },
     "db:down": {
       "cache": false
-    },
-    "test:e2e": {
-      "cache": false,
-      "dependsOn": ["web#build"]
-    },
-    "test:headed": {
-      "cache": false,
-      "dependsOn": ["web#build"]
     }
   }
 }

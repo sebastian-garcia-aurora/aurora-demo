@@ -36,9 +36,7 @@
     "db:watch": "turbo -F @aurora-demo/db db:watch",
     "db:stop": "turbo -F @aurora-demo/db db:stop",
     "db:down": "turbo -F @aurora-demo/db db:down",
-    "check": "biome check --write .",
-    "test:e2e": "turbo -F @aurora-demo/e2e test:e2e",
-    "test:e2e:headed": "turbo -F @aurora-demo/e2e test:headed"
+    "check": "biome check --write ."
   },
   "dependencies": {
     "@aurora-demo/env": "workspace:*",
@@ -56,7 +54,8 @@
     "jsdom": "^29.0.0",
     "turbo": "^2.8.12",
     "typescript": "^5",
-    "vitest": "^4.1.0"
+    "vitest": "^4.1.0",
+    "web": "workspace:*"
   },
   "packageManager": "bun@1.3.6"
 }
