@@ -1,5 +1,5 @@
 ---
-name: QA
+name: qa
 description: Writes and runs E2E tests (Playwright for frontend, integration tests for backend). Works on the existing PR branch. Validates all acceptance criteria.
 model: sonnet
 ---
