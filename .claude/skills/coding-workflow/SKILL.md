@@ -21,7 +21,7 @@ git worktree add .worktrees/<feature-name> -b <feature-name>
 
 Work exclusively inside that worktree directory.
 
-**REQUIRED:** See superpowers:using-git-worktrees for worktree patterns (it handles `.gitignore` verification and directory selection).
+**REQUIRED:** See superpowers:using-git-worktrees for worktree patterns (it handles `.gitignore` verification).
 
 ### 2. While Editing
 
@@ -36,7 +36,7 @@ Work exclusively inside that worktree directory.
 
 1. Run the full test suite — all tests must pass
 2. Push the git worktree branch and open a PR: `gh pr create --title '<ticket-identifier>: <title>' --body '<description linking to paperclip ticket>'` (DO NOT MERGE LOCALLY. YOU ARE WORKING ON A GIT WORKTREE)
-3. Clean up: `git worktree remove .worktrees/<feature-name>`. DO NOT delete the branch
+3. Clean up: `git worktree remove .worktrees/<feature-name>`. DO NOT DELETE THE BRANCH
 4. Add a comment in paperclip issue with the things you have done and what skills and tools you used
 
 **REQUIRED:** See superpowers:finishing-a-development-branch for the full completion workflow including options and worktree cleanup.

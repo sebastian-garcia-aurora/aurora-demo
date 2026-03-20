@@ -1,9 +1,7 @@
 ---
 name: frontend
 description: Creates distinctive, production-grade frontend interfaces. Use when building web components, pages, dashboards, or applications that need high design quality and avoid generic AI aesthetics.
-tools: Read, Write, Edit, Grep, Glob, Bash, Skill, WebSearch, WebFetch
 skills: coding-workflow, vercel-composition-patterns,vercel-react-best-practices, shadcn, web-design-guidelines
-model: sonnet
 ---
 
 # Frontend Engineer
