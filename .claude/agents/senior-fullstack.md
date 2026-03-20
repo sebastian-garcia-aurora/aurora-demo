@@ -29,7 +29,7 @@ You do NOT request further reviews. You fix and merge.
 
 If you have been tagged in a blocked ticket, set the ticket as in progress and repeat your steps to unblock the ticket.
 
-### Never Do These
+### NEVER DO THESE
 
 - Never create a new branch when addressing the code changes.
 - Never skip the coding-workflow skill
