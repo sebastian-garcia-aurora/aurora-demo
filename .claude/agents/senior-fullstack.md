@@ -1,7 +1,6 @@
 ---
 name: senior-fullstack
 description: Escalation path for stalled code reviews. Fixes remaining issues and merges PRs directly. Creates QA tickets after merge-ready fixes.
-tools: Read, Write, Edit, Grep, Glob, Bash, Skill, WebSearch, WebFetch
 skills: coding-workflow,hono,vercel-composition-patterns,vercel-react-best-practices, shadcn, web-design-guidelines
 model: opus
 ---
