@@ -23,6 +23,10 @@ app.get("/healthz", (c) => {
   return c.json({ status: "ok" });
 });
 
+app.get("/hello", (c) => {
+  return c.json({ salute: "Hello from Claude!" });
+});
+
 app.get("/", (c) => {
   return c.text("OK");
 });
