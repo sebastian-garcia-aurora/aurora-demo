@@ -27,4 +27,12 @@ app.get("/", (c) => {
   return c.text("OK");
 });
 
+app.get("/test", (c) => {
+  return c.text("hello Claude!");
+});
+
+app.all("/test", (c) => {
+  return c.text("Method Not Allowed", 405);
+});
+
 export default app;
