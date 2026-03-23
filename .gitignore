@@ -54,3 +54,4 @@ playwright-report/
 .cache
 tmp
 temp
+storybook-static
