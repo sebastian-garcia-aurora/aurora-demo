@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { fn } from "@storybook/test";
 import { Button } from "./button";
 
 const meta: Meta<typeof Button> = {
@@ -14,6 +15,10 @@ const meta: Meta<typeof Button> = {
       control: "select",
       options: ["default", "xs", "sm", "lg", "icon", "icon-xs", "icon-sm", "icon-lg"],
     },
+    onClick: { action: "clicked" },
+  },
+  args: {
+    onClick: fn(),
   },
 };
 
@@ -78,14 +83,32 @@ export const Large: Story = {
 };
 
 export const AllVariants: Story = {
-  render: () => (
-    <div className="flex flex-wrap gap-2 p-4">
-      <Button variant="default">Default</Button>
-      <Button variant="outline">Outline</Button>
-      <Button variant="secondary">Secondary</Button>
-      <Button variant="ghost">Ghost</Button>
-      <Button variant="destructive">Destructive</Button>
-      <Button variant="link">Link</Button>
+  render: (args) => (
+    <div className="space-y-4 p-4">
+      <div>
+        <p className="mb-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+          Variants
+        </p>
+        <div className="flex flex-wrap gap-2">
+          <Button {...args} variant="default">Default</Button>
+          <Button {...args} variant="outline">Outline</Button>
+          <Button {...args} variant="secondary">Secondary</Button>
+          <Button {...args} variant="ghost">Ghost</Button>
+          <Button {...args} variant="destructive">Destructive</Button>
+          <Button {...args} variant="link">Link</Button>
+        </div>
+      </div>
+      <div>
+        <p className="mb-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+          Sizes
+        </p>
+        <div className="flex flex-wrap items-center gap-2">
+          <Button {...args} size="xs">Extra Small</Button>
+          <Button {...args} size="sm">Small</Button>
+          <Button {...args} size="default">Default</Button>
+          <Button {...args} size="lg">Large</Button>
+        </div>
+      </div>
     </div>
   ),
 };
