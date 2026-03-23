@@ -11,7 +11,9 @@
     "./postcss.config": "./postcss.config.mjs"
   },
   "scripts": {
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@base-ui/react": "^1.0.0",
@@ -28,8 +30,16 @@
   },
   "devDependencies": {
     "@aurora-demo/config": "workspace:*",
+    "@storybook/addon-a11y": "^8.6.14",
+    "@storybook/addon-essentials": "^8.6.14",
+    "@storybook/blocks": "^8.6.14",
+    "@storybook/react": "^8.6.14",
+    "@storybook/react-vite": "^8.6.14",
+    "@storybook/test": "^8.6.14",
+    "@tailwindcss/postcss": "^4.2.2",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
+    "storybook": "^8.6.14",
     "tailwindcss": "catalog:",
     "typescript": "^5.9.3"
   }

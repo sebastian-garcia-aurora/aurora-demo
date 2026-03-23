@@ -49,6 +49,9 @@ playwright-report/
 # Worktrees
 .worktrees
 
+# Storybook build output
+storybook-static/
+
 # Misc
 *.tgz
 .cache
