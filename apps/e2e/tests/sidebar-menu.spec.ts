@@ -88,15 +88,19 @@ test.describe("AppSidebar extraction - AUR-38 QA (AUR-39)", () => {
     ).toBeVisible();
   });
 
-  test("DEFECT: TeamSwitcher updates active team on selection - crashes before selection", async ({
+  test("TeamSwitcher updates active team on selection", async ({
     page,
   }) => {
-    // Documents defect: dropdown crashes before team selection is possible.
+    // Previously crashed before selection was possible (fixed by AUR-40).
     await page.getByRole("button", { name: /Acme Inc Enterprise/i }).click();
 
-    // Should be able to select a different team
+    // Select a different team from the dropdown
     await page.getByRole("menuitem", { name: /Acme Corp/ }).click();
-    await expect(page.getByText("Acme Corp.")).toBeVisible();
+
+    // The active team button in the header should now show "Acme Corp. Startup"
+    await expect(
+      page.getByRole("button", { name: /Acme Corp\. Startup/i }),
+    ).toBeVisible();
   });
 
   // ── Collapsible nav groups ────────────────────────────────────────────────
@@ -152,20 +156,24 @@ test.describe("AppSidebar extraction - AUR-38 QA (AUR-39)", () => {
   // DEFECT: Same root cause as TeamSwitcher — DropdownMenuLabel used outside
   // DropdownMenuGroup in NavUser crashes the app on click.
 
-  test("DEFECT: User dropdown crashes on click - MenuGroupRootContext missing", async ({
+  test("User dropdown opens and shows profile actions (fixed by AUR-40)", async ({
     page,
   }) => {
-    // Documents defect: clicking user button in sidebar footer crashes the app.
-    // Use force: true to bypass TanStack Router devtools overlay in dev environment.
-    const userButton = page.getByRole("button", {
-      name: /shadcn m@example.com/i,
+    // Previously crashed with "MenuGroupRootContext missing" (fixed by AUR-40).
+    // Use page.evaluate to click the trigger, bypassing the TanStack Router
+    // devtools overlay that intercepts pointer events at the bottom of the page
+    // in the dev environment.
+    await page.evaluate(() => {
+      const triggers = document.querySelectorAll(
+        '[data-slot="dropdown-menu-trigger"][data-sidebar="menu-button"]',
+      );
+      const userTrigger = Array.from(triggers).find((el) =>
+        el.textContent?.includes("shadcn"),
+      ) as HTMLElement | undefined;
+      userTrigger?.click();
     });
-    await userButton.click({ force: true });
 
-    // Should open dropdown with user actions
-    const menuContent = page.locator("[data-slot='dropdown-menu-content']");
-    await expect(menuContent).toBeVisible({ timeout: 5000 });
-
+    // Dropdown should open with user actions
     await expect(
       page.getByRole("menuitem", { name: /Upgrade to Pro/ }),
     ).toBeVisible();
