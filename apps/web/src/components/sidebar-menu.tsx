@@ -166,22 +166,22 @@ function TeamSwitcher({ teams }: TeamSwitcherProps) {
 							<DropdownMenuLabel className="text-muted-foreground text-xs">
 								Teams
 							</DropdownMenuLabel>
+							{teams.map((team) => {
+								const TeamLogo = team.logo;
+								return (
+									<DropdownMenuItem
+										key={team.name}
+										onClick={() => setActiveTeam(team)}
+										className="gap-2 p-2"
+									>
+										<span className="flex size-6 items-center justify-center rounded-sm border">
+											<TeamLogo className="size-4 shrink-0" />
+										</span>
+										{team.name}
+									</DropdownMenuItem>
+								);
+							})}
 						</DropdownMenuGroup>
-						{teams.map((team) => {
-							const TeamLogo = team.logo;
-							return (
-								<DropdownMenuItem
-									key={team.name}
-									onClick={() => setActiveTeam(team)}
-									className="gap-2 p-2"
-								>
-									<span className="flex size-6 items-center justify-center rounded-sm border">
-										<TeamLogo className="size-4 shrink-0" />
-									</span>
-									{team.name}
-								</DropdownMenuItem>
-							);
-						})}
 						<DropdownMenuSeparator />
 						<DropdownMenuItem className="gap-2 p-2">
 							<span className="flex size-6 items-center justify-center rounded-md border bg-background">
